@@ -9,21 +9,25 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import Card from "../common/card/Card";
 
-import './styles.sass'
+import "./styles.sass";
 
 const Services = () => {
   const services = useSelector(serviceSelector);
   return (
     <section className="service__section">
+      <h1 className="heading">Value Added Services</h1>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={4}
         spaceBetween={30}
         navigation={true}
+        pagination={{
+          clickable: true,
+        }}
         loop={true}
-        modules={[Navigation]}
+        modules={[Navigation, Pagination]}
         className="mySwiper"
       >
         <div className="service__card__container">
